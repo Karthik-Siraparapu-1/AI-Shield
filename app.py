@@ -116,10 +116,12 @@ def render_verdict_card(r, kind):
                 <div>
                     <div style="font-size:0.8rem;font-weight:600;color:#64748b;text-transform:uppercase;">Fraud Probability</div>
                     <div style="font-size:1.8rem;font-weight:800;color:#0f172a;">{prob:.1%}</div>
+                    <div style="font-size:0.75rem;color:#64748b;font-weight:500;">Malicious Threat Risk</div>
                 </div>
                 <div>
                     <div style="font-size:0.8rem;font-weight:600;color:#64748b;text-transform:uppercase;">Confidence Score</div>
                     <div style="font-size:1.8rem;font-weight:800;color:#0f172a;">{conf:.1%}</div>
+                    <div style="font-size:0.75rem;color:#64748b;font-weight:500;">Multi-Signal Diagnostic Certainty</div>
                 </div>
             </div>
         </div>
@@ -127,6 +129,14 @@ def render_verdict_card(r, kind):
         unsafe_allow_html=True,
     )
     st.progress(min(max(prob, 0.0), 1.0))
+
+    with st.expander("ℹ️ Understanding Fraud Probability vs. Confidence Score", expanded=False):
+        st.markdown(
+            """
+            - **Fraud Probability ($0\\% - 100\\%$)**: Quantifies **threat severity** — the model's calibrated probability that this communication or URL is an active attack vector.
+            - **Confidence Score ($50\\% - 99\\%+$)**: Quantifies **diagnostic certainty** — measuring how decisive the evidence is by evaluating model decision margins ($|p - 0.5|$), agreement between sub-models, and corroborating domain red flags (such as OTP requests, KYC threats, or suspicious URL structures).
+            """
+        )
 
     st.markdown("### 🔍 Explainable Insights & Red Flags")
     if kind == "url":

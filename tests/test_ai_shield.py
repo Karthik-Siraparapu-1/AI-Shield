@@ -38,3 +38,18 @@ def test_url_verdicts():
 def test_email_returns_structure():
     r = predict_email("Hello", "see you tomorrow")
     assert "structure" in r and 0 <= r["fraud_probability"] <= 1
+
+
+def test_confidence_and_probability_are_distinct():
+    r_text = predict_text("Dear customer, your SBI account will be blocked today. Update KYC immediataly: http://sbi-kyc-update.xyz/login and share the OTP to verify.")
+    assert r_text["verdict"] == "Fraudulent"
+    assert 0 <= r_text["fraud_probability"] <= 1
+    assert 0 <= r_text["confidence"] <= 1
+    # Verify confidence and probability are mathematically distinct metrics
+    assert r_text["fraud_probability"] != r_text["confidence"]
+
+    r_url = predict_url("http://secure-paypal.com.account-verify.info/update")
+    assert 0 <= r_url["fraud_probability"] <= 1
+    assert 0 <= r_url["confidence"] <= 1
+    assert r_url["fraud_probability"] != r_url["confidence"]
+    assert "Random Forest" in r_url["model"]
