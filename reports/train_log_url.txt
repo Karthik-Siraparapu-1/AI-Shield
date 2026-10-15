@@ -1,0 +1,10 @@
+
+=== MODULE 2: URL ===
+Logistic Regression {'cv_f1': 0.5283, 'cv_roc_auc': 0.7079}
+Decision Tree {'cv_f1': 0.579, 'cv_roc_auc': 0.7477}
+Random Forest {'cv_f1': 0.6337, 'cv_roc_auc': 0.8243}
+Gradient Boosting {'cv_f1': 0.5836, 'cv_roc_auc': 0.8058}
+Logistic Regression {'cv_f1': 0.7111, 'cv_roc_auc': 0.7701}
+Decision Tree {'cv_f1': 0.7309, 'cv_roc_auc': 0.8062}
+Random Forest {'cv_f1': 0.7325, 'cv_roc_auc': 0.8105}
+Gradient Boosting {'cv_f1': 0.7219, 'cv_roc_auc': 0.8065}

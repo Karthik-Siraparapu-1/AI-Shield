@@ -1,0 +1,448 @@
+{
+  "scam_text": {
+    "audit": {
+      "train_rows_raw": 36751,
+      "test_rows_raw": 9188,
+      "train_duplicates": 6205,
+      "test_duplicates": 431,
+      "test_texts_also_in_train": 2900,
+      "train_rows_clean": 30540,
+      "test_rows_clean": 5949,
+      "train_pos_rate": 0.6362,
+      "test_pos_rate": 0.7534
+    },
+    "validation_comparison": {
+      "Logistic Regression": {
+        "n": 6108,
+        "positives": 3886,
+        "accuracy": 0.992,
+        "precision": 0.9992,
+        "recall": 0.9882,
+        "f1": 0.9937,
+        "roc_auc": 0.9994,
+        "pr_auc": 0.9997,
+        "confusion_matrix": [
+          [
+            2219,
+            3
+          ],
+          [
+            46,
+            3840
+          ]
+        ],
+        "fit_s": 1.2
+      },
+      "Naive Bayes": {
+        "n": 6108,
+        "positives": 3886,
+        "accuracy": 0.973,
+        "precision": 0.9747,
+        "recall": 0.983,
+        "f1": 0.9789,
+        "roc_auc": 0.9957,
+        "pr_auc": 0.9979,
+        "confusion_matrix": [
+          [
+            2123,
+            99
+          ],
+          [
+            66,
+            3820
+          ]
+        ],
+        "fit_s": 0.1
+      },
+      "Linear SVM": {
+        "n": 6108,
+        "positives": 3886,
+        "accuracy": 0.9944,
+        "precision": 0.9979,
+        "recall": 0.9933,
+        "f1": 0.9956,
+        "roc_auc": 0.9995,
+        "pr_auc": 0.9998,
+        "confusion_matrix": [
+          [
+            2214,
+            8
+          ],
+          [
+            26,
+            3860
+          ]
+        ],
+        "fit_s": 1.2
+      },
+      "Decision Tree": {
+        "n": 6108,
+        "positives": 3886,
+        "accuracy": 0.975,
+        "precision": 0.9849,
+        "recall": 0.9756,
+        "f1": 0.9802,
+        "roc_auc": 0.9711,
+        "pr_auc": 0.9779,
+        "confusion_matrix": [
+          [
+            2164,
+            58
+          ],
+          [
+            95,
+            3791
+          ]
+        ],
+        "fit_s": 33.3
+      },
+      "Random Forest": {
+        "n": 6108,
+        "positives": 3886,
+        "accuracy": 0.9877,
+        "precision": 0.9992,
+        "recall": 0.9815,
+        "f1": 0.9903,
+        "roc_auc": 0.9985,
+        "pr_auc": 0.9992,
+        "confusion_matrix": [
+          [
+            2219,
+            3
+          ],
+          [
+            72,
+            3814
+          ]
+        ],
+        "fit_s": 30.7
+      }
+    },
+    "selected": "Linear SVM",
+    "test": {
+      "n": 5949,
+      "positives": 4482,
+      "accuracy": 0.9971,
+      "precision": 0.9991,
+      "recall": 0.9971,
+      "f1": 0.9981,
+      "roc_auc": 0.9997,
+      "pr_auc": 0.9999,
+      "confusion_matrix": [
+        [
+          1463,
+          4
+        ],
+        [
+          13,
+          4469
+        ]
+      ]
+    },
+    "length_buckets": {
+      "<200 chars (SMS-like)": {
+        "n": 877,
+        "scam_share": 0.185,
+        "accuracy": 0.9875
+      },
+      "200-1000": {
+        "n": 1933,
+        "scam_share": 0.758,
+        "accuracy": 0.9974
+      },
+      ">1000 (long dialogue)": {
+        "n": 3139,
+        "scam_share": 0.909,
+        "accuracy": 0.9997
+      }
+    },
+    "length_only_baseline_accuracy": 0.8492,
+    "top_terms": {
+      "scam": [
+        "00",
+        "00 00",
+        "00 am",
+        "00 and",
+        "00 but",
+        "00 every",
+        "00 in",
+        "00 last",
+        "00 next",
+        "00 on",
+        "00 or",
+        "00 pm",
+        "00 so",
+        "00 the",
+        "00 this",
+        "00 to",
+        "00 tomorrow",
+        "00 we",
+        "00 which",
+        "00 yesterday",
+        "000",
+        "000 000",
+        "000 and",
+        "000 as",
+        "000 at"
+      ],
+      "legit": [
+        "00",
+        "00 00",
+        "00 am",
+        "00 and",
+        "00 but",
+        "00 every",
+        "00 in",
+        "00 last",
+        "00 next",
+        "00 on",
+        "00 or",
+        "00 pm",
+        "00 so",
+        "00 the",
+        "00 this",
+        "00 to",
+        "00 tomorrow",
+        "00 we",
+        "00 which",
+        "00 yesterday",
+        "000",
+        "000 000",
+        "000 and",
+        "000 as",
+        "000 at"
+      ]
+    }
+  },
+  "url_basic": {
+    "rows_raw": 2488,
+    "rows_clean": 1354,
+    "pos_rate": 0.3316,
+    "comparison_cv": {
+      "Logistic Regression": {
+        "cv_f1": 0.5283,
+        "cv_roc_auc": 0.7079
+      },
+      "Decision Tree": {
+        "cv_f1": 0.579,
+        "cv_roc_auc": 0.7477
+      },
+      "Random Forest": {
+        "cv_f1": 0.6337,
+        "cv_roc_auc": 0.8243
+      },
+      "Gradient Boosting": {
+        "cv_f1": 0.5836,
+        "cv_roc_auc": 0.8058
+      }
+    },
+    "selected": "Random Forest",
+    "test": {
+      "n": 271,
+      "positives": 90,
+      "accuracy": 0.7232,
+      "precision": 0.5824,
+      "recall": 0.5889,
+      "f1": 0.5856,
+      "roc_auc": 0.8144,
+      "pr_auc": 0.7312,
+      "confusion_matrix": [
+        [
+          143,
+          38
+        ],
+        [
+          37,
+          53
+        ]
+      ]
+    }
+  },
+  "url_uci": {
+    "rows_raw": 11055,
+    "rows_clean": 11055,
+    "pos_rate": 0.4431,
+    "comparison_cv": {
+      "Logistic Regression": {
+        "cv_f1": 0.7111,
+        "cv_roc_auc": 0.7701
+      },
+      "Decision Tree": {
+        "cv_f1": 0.7309,
+        "cv_roc_auc": 0.8062
+      },
+      "Random Forest": {
+        "cv_f1": 0.7325,
+        "cv_roc_auc": 0.8105
+      },
+      "Gradient Boosting": {
+        "cv_f1": 0.7219,
+        "cv_roc_auc": 0.8065
+      }
+    },
+    "selected": "Random Forest",
+    "test": {
+      "n": 2211,
+      "positives": 980,
+      "accuracy": 0.7368,
+      "precision": 0.6592,
+      "recall": 0.8408,
+      "f1": 0.739,
+      "roc_auc": 0.8265,
+      "pr_auc": 0.7597,
+      "confusion_matrix": [
+        [
+          805,
+          426
+        ],
+        [
+          156,
+          824
+        ]
+      ]
+    },
+    "note": "Only the 8 features computable from a URL string are used (page-content features excluded)."
+  },
+  "email_text": {
+    "enron_rows_total": 447417,
+    "enron_fraud_total": 2327,
+    "sample_rows": 10451,
+    "comparison_holdout": {
+      "Logistic Regression": {
+        "n": 2091,
+        "positives": 341,
+        "accuracy": 0.9603,
+        "precision": 0.8468,
+        "recall": 0.9238,
+        "f1": 0.8836,
+        "roc_auc": 0.9871,
+        "pr_auc": 0.9269,
+        "confusion_matrix": [
+          [
+            1693,
+            57
+          ],
+          [
+            26,
+            315
+          ]
+        ]
+      },
+      "Naive Bayes": {
+        "n": 2091,
+        "positives": 341,
+        "accuracy": 0.9498,
+        "precision": 0.8057,
+        "recall": 0.912,
+        "f1": 0.8556,
+        "roc_auc": 0.983,
+        "pr_auc": 0.9166,
+        "confusion_matrix": [
+          [
+            1675,
+            75
+          ],
+          [
+            30,
+            311
+          ]
+        ]
+      },
+      "Linear SVM": {
+        "n": 2091,
+        "positives": 341,
+        "accuracy": 0.9617,
+        "precision": 0.8761,
+        "recall": 0.8915,
+        "f1": 0.8837,
+        "roc_auc": 0.987,
+        "pr_auc": 0.9189,
+        "confusion_matrix": [
+          [
+            1707,
+            43
+          ],
+          [
+            37,
+            304
+          ]
+        ]
+      }
+    },
+    "selected": "Linear SVM",
+    "external_email_spam": {
+      "n": 84,
+      "positives": 26,
+      "accuracy": 0.5476,
+      "precision": 0.3125,
+      "recall": 0.3846,
+      "f1": 0.3448,
+      "roc_auc": 0.4871,
+      "pr_auc": 0.3269,
+      "confusion_matrix": [
+        [
+          36,
+          22
+        ],
+        [
+          16,
+          10
+        ]
+      ],
+      "columns_used": [
+        "text",
+        "type"
+      ]
+    }
+  },
+  "email_structural": {
+    "rows_raw": 524846,
+    "rows_clean": 205052,
+    "duplicates_removed": 319794,
+    "pos_rate": 0.0297,
+    "comparison_holdout": {
+      "Logistic Regression": {
+        "n": 41011,
+        "positives": 1216,
+        "accuracy": 0.4039,
+        "precision": 0.0438,
+        "recall": 0.9169,
+        "f1": 0.0836,
+        "roc_auc": 0.6726,
+        "pr_auc": 0.0546,
+        "confusion_matrix": [
+          [
+            15450,
+            24345
+          ],
+          [
+            101,
+            1115
+          ]
+        ]
+      },
+      "Random Forest": {
+        "n": 41011,
+        "positives": 1216,
+        "accuracy": 0.9415,
+        "precision": 0.2158,
+        "recall": 0.3692,
+        "f1": 0.2724,
+        "roc_auc": 0.8278,
+        "pr_auc": 0.2338,
+        "confusion_matrix": [
+          [
+            38163,
+            1632
+          ],
+          [
+            767,
+            449
+          ]
+        ]
+      }
+    },
+    "note": "Supplementary experiment; weak signal (see PR-AUC vs positive rate). Not used in the app."
+  },
+  "_gct_text_only_accuracy": 0.4989
+}

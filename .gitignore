@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.DS_Store
+*.log
+
+# raw Kaggle files are large - download them yourself (see README)
+data/raw/
+
+# Generator scripts for PDF/PPT (keeps GitHub repo focused on ML/app code)
+docs/make_*.py
+docs/build_*.py

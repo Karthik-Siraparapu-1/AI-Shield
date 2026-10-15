@@ -1,0 +1,11 @@
+dataset,rows,columns,missing_cells,duplicate_rows,target,task,finding
+Composite Scam (train),36751,2,0.0,6205.0,label,Scam text,17% duplicate rows
+Composite Scam (test),9188,2,0.0,431.0,label,Scam text,"2,900 texts leak from train"
+GCT 100K,100000,35,424.0,64426.0,human_verified_label,Not used,labels at chance level; 65% duplicate texts
+Phishing URL features (2.5K),2488,14,0.0,1134.0,target,URL,46% duplicates
+UCI Phishing features (11K),11055,32,0.0,0.0,Result,URL,page-content features not usable
+Email features (525K),524846,9,0.0,319794.0,label,Email (suppl.),61% duplicate rows
+Email spam (84),84,3,0.0,1.0,type,External email test,tiny; used only for validation
+Global Cyber Threats,3000,10,0.0,0.0,-,Dashboard,analytics only
+CryptoScamDB URIs,17,7,2.0,0.0,-,Demo,17 rows; no labels
+Enron fraud-labelled emails,447417,14,,,Label,Email text,0.5% fraud; corporate-only negatives
