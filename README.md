@@ -3,7 +3,7 @@
 Final project for the **AICTE | IBM SkillsBuild Machine Learning & Applied AI Internship 2026 (BharatCares)**.
 Supports **SDG 9** (Industry, Innovation & Infrastructure) and **SDG 16** (Peace, Justice & Strong Institutions).
 
-**Live app:** _add your Streamlit Community Cloud URL here_ · **Author:** Karthik Siraparapu, Marwadi University
+**Live app:** [ai-shield.streamlit.app](https://ai-shield.streamlit.app/) · **Author:** Karthik Siraparapu, Marwadi University
 
 ## What it does
 Paste a suspicious SMS/WhatsApp message, URL or email. AI Shield returns **Legitimate / Suspicious / Fraudulent**, a fraud
